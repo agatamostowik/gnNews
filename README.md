@@ -1,33 +1,73 @@
-# gnNews - gnStudio React.js developer challenge
+# Turborepo starter
 
-Witaj, jeżeli znalazłeś się w tym miejscu to najprawdopodobniej chcesz dołączyć do niesamowitego teamu tworzącego rozwiązania szyte na miarę i chcesz w końcu realizować projekty, które nie będą nudne, będą sprawiały Ci frajdę i będą napawały Cię dumą kiedy tylko o nich pomyślisz.
+This is an official npm starter turborepo.
 
-Cóż, projekty są różne, więc może tak właśnie być, a może być zupełnie odwrotnie 😉 Możemy Ci jedynie zagwarantować, że nie będziesz się nudzić.
+## What's inside?
 
-## O zadaniu
+This turborepo uses [npm](https://www.npmjs.com/) as a package manager. It includes the following packages/apps:
 
-Abyśmy mogli bliżej poznać Twoje umiejętności techniczne, stopień zaangażowania oraz sposób myślenia, przygotowaliśmy dla Ciebie zadanie polegające na stworzeniu prostej aplikacji będącej "agregatorem newsów" szumnie nazwanej przez nas roboczo **gnNews**.
+### Apps and Packages
 
-To na czym nam zależy to przede wszystkim czytelny kod, działająca aplikacja i UI, który nie wygląda jak konar ciosany tępym scyzorykiem (hint: pamiętaj o RWD, ale ciii, nie mów nikomu, że Ci podpowiedziałem 😉)
+- `docs`: a [Next.js](https://nextjs.org/) app
+- `web`: another [Next.js](https://nextjs.org/) app
+- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
-## Następne kroki
+Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-- wykonaj forka tego repozytorium jako prywatne repo
-- postępuj z instrukcjami zawartymi w [opis-zadania.md](./opis-zadania.md)
-- rozwiąż zadanie najlepiej jak potrafisz
-- dodaj użytkownika [gn-studio-pl](https://github.com/gn-studio-pl) do repozytorium
+### Utilities
 
-## Uwagi
+This turborepo has some additional tools already setup for you:
 
-- aplikację wykonaj w oparciu o React.js, wykorzystanie TypeScript'u bedzie mile widziane i dodatkowo punktowane
-- wykorzystaj nastepujace biblioteki: Redux toolkit, react-test-lib. Może odbierzesz to jako wychodzenie z armatą na muchy ale korzystamy z nich w naszych projektach i chcemy wiedziec czy czujesz się w nich dobrze
-- nie musisz tworzyć całego UI samemu, możesz skorzystać z dowolnej biblioteki UI
-- nie ma tutaj limitu czasu (poza wyznaczonym deadlinem), ale zalecamy, abyś nie spędzał nad tym zadaniem więcej jak 12 godzin
-- staraj się napisać swój kod najlepiej jak potrafisz
-- otestowanie przynajmniej części aplikacji mile widziane 😉
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
 
-## Pytania?
+### Build
 
-Jeżeli masz jakiekolwiek pytania co do wykonywanego zadania, bądź coś nie jest dla Ciebie jasne, albo masz trudności na którymś etapie, nie krępuj się - dzwoń, pisz - wyjaśnimy (chyba 😛)
+To build all apps and packages, run the following command:
 
-## Powodzenia!
+```
+cd my-turborepo
+npm run build
+```
+
+### Develop
+
+To develop all apps and packages, run the following command:
+
+```
+cd my-turborepo
+npm run dev
+```
+
+### Remote Caching
+
+Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+
+By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+
+```
+cd my-turborepo
+npx turbo login
+```
+
+This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+
+Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
+
+```
+npx turbo link
+```
+
+## Useful Links
+
+Learn more about the power of Turborepo:
+
+- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
+- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
+- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
+- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
+- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
+- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
