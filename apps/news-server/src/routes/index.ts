@@ -43,7 +43,7 @@ rootRouter.get(
         country: country,
         page: page,
         pageSize: pageSize,
-        apiKey: process.env.NEWS_KEY,
+        apiKey: process.env.NEWS_KEY ?? "b7b5467a1ad44a0cac9e9beb7164d08c",
       });
 
       const rawResponse = await fetch(
